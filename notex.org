@@ -1,0 +1,10 @@
+#+STARTUP: indent
+* Objective
+So I started this project to finally put an end to the various
+problems one had when checking admission test results. So I will Scrap
+the results from [[http://www.admision.uni.edu.pe/resultado_adm.php][UNI's official admission results page]] and show it in
+a more intuitive way.
+* Resources
+[[http://doc.scrapy.org/en/latest/intro/tutorial.html][Scrapy Documentation]]
+* Lets do it
+Okay so I first create A Project, like you know lol.
