@@ -4,3 +4,4 @@ build
 # Emacs backup files...
 *~
 .\#*
+.vagrant
