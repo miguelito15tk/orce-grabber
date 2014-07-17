@@ -1,1 +1,6 @@
-.#*
+# build products...
+*.py[co]
+build
+# Emacs backup files...
+*~
+.\#*
