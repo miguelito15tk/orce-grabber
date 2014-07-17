@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network "private_network", ip: "192.168.33.15"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -45,13 +45,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
-    # Don't boot with headless mode
-    # vb.gui = true
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--name", "OrceGrabber", "--memory", "512"]
+  end
 
-    vb.name = "orce"
-    # Use VBoxManage to customize the VM. For example to change memory:
-    # vb.customize ["modifyvm", :id, "--memory", "1024"]
+  # Ansible provisioner.
+  config.vm.provision "ansible" do |ansible|
+    ansible.playbook = "provisioning/vagrant.yml"
+    ansible.host_key_checking = false
+    ansible.verbose = "v"
   end
   #
   # View the documentation for the provider you're using for more
