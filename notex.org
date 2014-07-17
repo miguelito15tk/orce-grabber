@@ -8,3 +8,10 @@ a more intuitive way.
 [[http://doc.scrapy.org/en/latest/intro/tutorial.html][Scrapy Documentation]]
 * Lets do it
 Okay so I first create A Project, like you know lol.
+#+begin_src sh
+git init
+vagrant init
+#+end_src
+
+Then edit the vagrant file to accept the ansible thing. We will
+provision our Virtual Machine with Ansible And synchronize the
