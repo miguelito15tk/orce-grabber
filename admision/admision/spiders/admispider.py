@@ -2,6 +2,7 @@
 import scrapy
 from admision.items import AdmisionItem
 
+
 class AdmispiderSpider(scrapy.Spider):
     name = "admispider"
     allowed_domains = ["http://www.admision.uni.edu.pe/resultado_adm.php"]
@@ -31,13 +32,10 @@ class AdmispiderSpider(scrapy.Spider):
             data['P3'] = u''.join(alumno[5].xpath('text()').extract()).strip()
             data['acumulado'] = u''.join(alumno[6].xpath('text()').extract()).strip()
             data['nota_vocacional'] = u''.join(alumno[7].xpath('text()').extract()).strip()
-            data['nota_cne'] = u''.join(alumno[8].xpath('text()').extract()).strip()
-            data['nota_arq'] = u''.join(alumno[9].xpath('text()').extract()).strip()
-            data['nota_final'] = u''.join(alumno[10].xpath('text()').extract()).strip()
-            data['nota_ingreso'] = u''.join(alumno[11].xpath('text()').extract()).strip()
-            data['merito_modalidad'] = u''.join(alumno[12].xpath('text()').extract()).strip()
-            data['modalidad_ingreso'] = u''.join(alumno[13].xpath('text()').extract()).strip()
-            data['especialidad_ingreso'] = u''.join(alumno[14].xpath('text()').extract()).strip()
-            data['observacion'] = u''.join(alumno[15].xpath('text()').extract()).strip()
+            data['nota_examen'] = u''.join(alumno[8].xpath('text()').extract()).strip()
+            data['nota_final'] = u''.join(alumno[9].xpath('text()').extract()).strip()
+            data['modalidad_ingreso'] = u''.join(alumno[10].xpath('text()').extract()).strip()
+            data['especialidad_ingreso'] = u''.join(alumno[11].xpath('text()').extract()).strip()
+            data['observacion'] = u''.join(alumno[12].xpath('text()').extract()).strip()
 
             yield data
